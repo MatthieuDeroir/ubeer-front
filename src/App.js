@@ -19,7 +19,7 @@ function App() {
     const fetchUserData = async () => {
       if (isAuthenticated && !sessionStorage.getItem('userData')) {
         const token = await getAccessTokenSilently();
-        const response = await fetch('http://ubeer-api/api/user/profile', {
+        const response = await fetch('https://ubeer-api/api/user/profile', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
