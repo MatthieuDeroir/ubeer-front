@@ -13,7 +13,7 @@ const BreweryManagement = () => {
 
   const fetchBreweries = useCallback (async () => {
     const token = await getAccessTokenSilently();
-    const response = await fetch('http://localhost:4000/api/brewery/get', {
+    const response = await fetch('http://ubeer-api/api/brewery/get', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -50,7 +50,7 @@ const BreweryManagement = () => {
     }
 
     const method = currentBrewery.id ? 'PUT' : 'POST';
-    const url = currentBrewery.id ? `http://localhost:4000/api/brewery/${method.toLowerCase()}/${currentBrewery.id}` : `http://localhost:4000/api/brewery/${method.toLowerCase()}/`;
+    const url = currentBrewery.id ? `http://ubeer-api/api/brewery/${method.toLowerCase()}/${currentBrewery.id}` : `http://localhost:4000/api/brewery/${method.toLowerCase()}/`;
 
     await fetch(url, {
       method,
@@ -66,7 +66,7 @@ const BreweryManagement = () => {
 
   const handleDelete = async (id) => {
     const token = await getAccessTokenSilently();
-    await fetch(`http://localhost:4000/api/brewery/delete/${id}`, {
+    await fetch(`http://ubeer-api/api/brewery/delete/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,

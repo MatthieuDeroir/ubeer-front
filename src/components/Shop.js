@@ -15,7 +15,7 @@ const Shop = () => {
 
   const fetchBeers = async () => {
     const token = await getAccessTokenSilently();
-    const response = await fetch('http://localhost:4000/api/beer/get', {
+    const response = await fetch('http://ubeer-api/api/beer/get', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -26,7 +26,7 @@ const Shop = () => {
 
   const addToCart = async (beer, quantity) => {
     const token = await getAccessTokenSilently();
-    const response = await fetch('http://localhost:4000/api/user/cart', {
+    const response = await fetch('http://ubeer-api/api/user/cart', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,

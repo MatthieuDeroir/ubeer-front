@@ -11,15 +11,15 @@ import BeerManagement from './components/BeerManagement';
 import Cart from './components/Cart';
 import Shop from './components/Shop';
 
+
 function App() {
   const { isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
   const [userData, setUserData] = useState(null);
-
   useEffect(() => {
     const fetchUserData = async () => {
       if (isAuthenticated && !sessionStorage.getItem('userData')) {
         const token = await getAccessTokenSilently();
-        const response = await fetch('http://localhost:4000/api/user/profile', {
+        const response = await fetch('http://ubeer-api/api/user/profile', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

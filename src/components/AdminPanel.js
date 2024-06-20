@@ -16,7 +16,7 @@ const AdminPanel = () => {
 
   const fetchBeers = async () => {
     try {
-      const response = await fetch('/api/beer/get');
+      const response = await fetch('https://ubeer-api/api/beer/get');
       const data = await response.json();
       setBeers(data);
     } catch (error) {
@@ -26,7 +26,7 @@ const AdminPanel = () => {
 
   const fetchBreweries = async () => {
     try {
-      const response = await fetch('/api/brewery/get');
+      const response = await fetch('https://ubeer-api/api/brewery/get');
       const data = await response.json();
       setBreweries(data);
     } catch (error) {
@@ -36,7 +36,7 @@ const AdminPanel = () => {
 
   const fetchFormats = async () => {
     try {
-      const response = await fetch('/api/format/get');
+      const response = await fetch('https://ubeer-api/api/format/get');
       const data = await response.json();
       setFormats(data);
     } catch (error) {
@@ -49,7 +49,7 @@ const AdminPanel = () => {
     console.log(selectedBeer);
     try {
       const method = selectedBeer?.id ? 'PUT' : 'POST';
-      const url = selectedBeer?.id ? `/api/beer/put/${selectedBeer.id}` : '/api/beer/post';
+      const url = selectedBeer?.id ? `https://ubeer-api/api/beer/put/${selectedBeer.id}` : '/api/beer/post';
       const response = await fetch(url, {
         method: method,
         headers: {
@@ -72,7 +72,7 @@ const AdminPanel = () => {
     event.preventDefault();
     try {
       const method = selectedBrewery?.id ? 'PUT' : 'POST';
-      const url = selectedBrewery?.id ? `/api/brewery/put/${selectedBrewery.id}` : '/api/brewery/post';
+      const url = selectedBrewery?.id ? `https://ubeer-api/api/brewery/put/${selectedBrewery.id}` : '/api/brewery/post';
       const response = await fetch(url, {
         method: method,
         headers: {
@@ -95,7 +95,7 @@ const AdminPanel = () => {
     event.preventDefault();
     try {
       const method = selectedFormat?.id ? 'PUT' : 'POST';
-      const url = selectedFormat?.id ? `/api/format/put/${selectedFormat.id}` : '/api/format/post';
+      const url = selectedFormat?.id ? `https://ubeer-api/api/format/put/${selectedFormat.id}` : '/api/format/post';
       const response = await fetch(url, {
         method: method,
         headers: {
@@ -116,7 +116,7 @@ const AdminPanel = () => {
 
   const handleDeleteBeer = async (id) => {
     try {
-      const response = await fetch(`/api/beer/delete/${id}`, { method: 'DELETE' });
+      const response = await fetch(`https://ubeer-api/api/beer/delete/${id}`, { method: 'DELETE' });
       if (response.ok) {
         fetchBeers();
       } else {
@@ -129,7 +129,7 @@ const AdminPanel = () => {
 
   const handleDeleteBrewery = async (id) => {
     try {
-      const response = await fetch(`/api/brewery/delete/${id}`, { method: 'DELETE' });
+      const response = await fetch(`https://ubeer-api/api/brewery/delete/${id}`, { method: 'DELETE' });
       if (response.ok) {
         fetchBreweries();
       } else {
@@ -142,7 +142,7 @@ const AdminPanel = () => {
 
   const handleDeleteFormat = async (id) => {
     try {
-      const response = await fetch(`/api/format/delete/${id}`, { method: 'DELETE' });
+      const response = await fetch(`https://ubeer-api/api/format/delete/${id}`, { method: 'DELETE' });
       if (response.ok) {
         fetchFormats();
       } else {

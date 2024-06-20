@@ -42,5 +42,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "crypto-browserify": "^3.12.0",
+    "dotenv": "^16.4.5",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1"
   }
 }
