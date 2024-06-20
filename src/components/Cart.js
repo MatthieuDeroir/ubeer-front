@@ -14,7 +14,7 @@ const Cart = () => {
   const fetchCart = async () => {
     try {
       const token = await getAccessTokenSilently();
-      const response = await fetch('http://ubeer-api/api/user/cart', {
+      const response = await fetch('https://ubeer-api/api/user/cart', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -38,7 +38,7 @@ const Cart = () => {
   const updateCartItemQuantity = async (beerId, quantity) => {
     try {
       const token = await getAccessTokenSilently();
-      const response = await fetch('http://ubeer-api/api/user/cart', {
+      const response = await fetch('https://ubeer-api/api/user/cart', {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -65,7 +65,7 @@ const Cart = () => {
   const removeCartItem = async (beerId) => {
     try {
       const token = await getAccessTokenSilently();
-      const response = await fetch('http://ubeer-api/api/user/cart', {
+      const response = await fetch('https://ubeer-api/api/user/cart', {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
