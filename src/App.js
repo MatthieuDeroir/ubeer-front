@@ -62,7 +62,7 @@ function App() {
               <>
                 <Button color="inherit" component={Link} to="/shop">Shop</Button>
                 <Button color="inherit" component={Link} to="/cart">Cart</Button>
-                {userData?.role === 'admin' && (
+                {isAdmin === 'admin' && (
                   <>
                     <Button color="inherit" component={Link} to="/manage-breweries">Manage Breweries</Button>
                     <Button color="inherit" component={Link} to="/manage-formats">Manage Formats</Button>
