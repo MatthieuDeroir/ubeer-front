@@ -14,7 +14,7 @@ const BeerManagement = () => {
 
   const fetchBreweries = useCallback(async () => {
     const token = await getAccessTokenSilently();
-    const response = await fetch('http://ubeer-api/api/brewery/get', {
+    const response = await fetch('https://ubeer-api/api/brewery/get', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -25,7 +25,7 @@ const BeerManagement = () => {
 
   const fetchFormats = useCallback(async () => {
     const token = await getAccessTokenSilently();
-    const response = await fetch('http://ubeer-api/api/format/get', {
+    const response = await fetch('https://ubeer-api/api/format/get', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -36,7 +36,7 @@ const BeerManagement = () => {
 
   const fetchBeers = useCallback(async () => {
     const token = await getAccessTokenSilently();
-    const response = await fetch('http://ubeer-api/api/beer/get', {
+    const response = await fetch('https://ubeer-api/api/beer/get', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -74,7 +74,7 @@ const BeerManagement = () => {
     }
 
     const method = currentBeer.id ? 'PUT' : 'POST';
-    const url = currentBeer.id ? `http://ubeer-api/api/beer/put/${currentBeer.id}` : `http://localhost:4000/api/beer/post`;
+    const url = currentBeer.id ? `https://ubeer-api/api/beer/put/${currentBeer.id}` : `https://localhost:4000/api/beer/post`;
 
     const response = await fetch(url, {
       method,
@@ -109,7 +109,7 @@ const BeerManagement = () => {
 
   const handleDelete = async (id) => {
     const token = await getAccessTokenSilently();
-    await fetch(`http://ubeer-api/api/beer/delete/${id}`, {
+    await fetch(`https://ubeer-api/api/beer/delete/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,

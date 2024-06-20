@@ -9,7 +9,7 @@ const Profile = () => {
     const fetchData = async () => {
       try {
         const token = await getAccessTokenSilently();
-        const response = await fetch("http://ubeer-api/api/user/profile", {
+        const response = await fetch("https://ubeer-api/api/user/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

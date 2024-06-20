@@ -14,7 +14,7 @@ const FormatManagement = () => {
 
   const fetchFormats = useCallback( async () => {
     const token = await getAccessTokenSilently();
-    const response = await fetch('http://ubeer-api/api/format/get', {
+    const response = await fetch('https://ubeer-api/api/format/get', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -50,7 +50,7 @@ const FormatManagement = () => {
     }
 
     const method = currentFormat.id ? 'PUT' : 'POST';
-    const url = currentFormat.id ? `http://ubeer-api/api/format/${method.toLowerCase()}/${currentFormat.id}` : `http://localhost:4000/api/format/${method.toLowerCase()}/`;
+    const url = currentFormat.id ? `https://ubeer-api/api/format/${method.toLowerCase()}/${currentFormat.id}` : `https://localhost:4000/api/format/${method.toLowerCase()}/`;
 
     await fetch(url, {
       method,
@@ -70,7 +70,7 @@ const FormatManagement = () => {
 
   const handleDelete = async (id) => {
     const token = await getAccessTokenSilently();
-    await fetch(`http://ubeer-api/api/format/delete/${id}`, {
+    await fetch(`https://ubeer-api/api/format/delete/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
