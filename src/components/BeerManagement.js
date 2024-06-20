@@ -74,7 +74,7 @@ const BeerManagement = () => {
     }
 
     const method = currentBeer.id ? 'PUT' : 'POST';
-    const url = currentBeer.id ? `https://ubeer-api/api/beer/put/${currentBeer.id}` : `https://localhost:4000/api/beer/post`;
+    const url = currentBeer.id ? `https://ubeer-api/api/beer/put/${currentBeer.id}` : `https://ubeer-api/api/beer/post`;
 
     const response = await fetch(url, {
       method,

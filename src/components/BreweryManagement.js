@@ -50,7 +50,7 @@ const BreweryManagement = () => {
     }
 
     const method = currentBrewery.id ? 'PUT' : 'POST';
-    const url = currentBrewery.id ? `https://ubeer-api/api/brewery/${method.toLowerCase()}/${currentBrewery.id}` : `https://localhost:4000/api/brewery/${method.toLowerCase()}/`;
+    const url = currentBrewery.id ? `https://ubeer-api/api/brewery/${method.toLowerCase()}/${currentBrewery.id}` : `https://ubeer-api/api/brewery/${method.toLowerCase()}/`;
 
     await fetch(url, {
       method,

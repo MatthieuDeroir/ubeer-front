@@ -50,7 +50,7 @@ const FormatManagement = () => {
     }
 
     const method = currentFormat.id ? 'PUT' : 'POST';
-    const url = currentFormat.id ? `https://ubeer-api/api/format/${method.toLowerCase()}/${currentFormat.id}` : `https://localhost:4000/api/format/${method.toLowerCase()}/`;
+    const url = currentFormat.id ? `https://ubeer-api/api/format/${method.toLowerCase()}/${currentFormat.id}` : `https://ubeer-api/api/format/${method.toLowerCase()}/`;
 
     await fetch(url, {
       method,
